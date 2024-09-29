@@ -1,0 +1,142 @@
+:root {
+    --color-slidebar: #2C3E50;
+    --color-main: #ECF0F1;
+    --color-texto: #34495E;
+    --color-acento: #E74C3C;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: var(--color-texto);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: var(--color-slidebar);
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.wrapper {
+    position: relative;
+    width: 800px;
+    height: 65vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 3px solid var(--color-acento); 
+    box-shadow: 0 0 10px 0 rgba(46, 204, 113, 0.6); 
+    background: var(--color-main); 
+}
+
+.banner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 450px;
+    height: 100%;
+    background: linear-gradient(to right, #3498DB, #2980B9); 
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 60% 100%);
+    padding-right: 70px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    color: #fff;
+}
+
+.wel_text {
+    font-size: 40px;
+    margin-top: -50px;
+    line-height: 50px;
+    color: var(--color-main); 
+}
+
+.para {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    color: var(--color-main); 
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 35px;
+    color: var(--color-slidebar); 
+}
+
+.inp {
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+.input {
+    border: none;
+    outline: none;
+    background: none;
+    width: 260px;
+    margin-top: 40px;
+    padding-right: 10px;
+    font-size: 17px;
+    color: var(--color-texto); 
+}
+
+.submit {
+    border: none;
+    outline: none;
+    width: 288px;
+    margin-top: 25px;
+    padding: 10px 0;
+    font-size: 20px;
+    border-radius: 40px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background: var(--color-acento); 
+    color: #fff;
+    transition: background 0.3s ease;
+}
+
+.submit:hover {
+    background: #c0392b; 
+}
+
+.footer {
+    margin-top: 30px;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    color: var(--color-texto); 
+}
+
+.link {
+    color: var(--color-acento);
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.opciones-login {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    padding: 0 10px;
+}
+
+.opciones-login a {
+    text-decoration: none;
+    color: var(--color-texto);
+}
