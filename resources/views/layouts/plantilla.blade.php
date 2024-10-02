@@ -132,12 +132,12 @@
     
 <!-- graficas -->
 
-
+<!-- modificado el 1/10/2024 -->
      
     <!-- Aqui todos los elementos cambientes -->
     @yield('contenido')
 
    </main>
-    <script src="js/script.js"></script>
+    <script src="{{asset('js/script.js')}}"></script>
 </body>
 </html>
