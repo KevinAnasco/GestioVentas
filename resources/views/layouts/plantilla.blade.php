@@ -72,11 +72,11 @@
         <div class="element-slidebar-content">
         <div class="element-slidebar-content">
    
-    <a href="{{ route('productos.agregar')}}">Agregar Producto</a>
+        <a href="{{ route('producto.create') }}">Agregar Producto</a>
    
-    <a href="{{ route('productos.index')}}">Todos</a>
+    <a href="{{ route('producto.index')}}">Todos</a>
     
-    <a href="#">Actualizar Stock</a>
+ 
 
 </div>
 
