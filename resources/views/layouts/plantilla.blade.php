@@ -11,10 +11,10 @@
 
 <link rel="stylesheet" href="{{asset('css/styles.css')}}">
     <link rel="stylesheet" href="{{asset('css/estilos-tablas.css')}}">
+    <link rel="stylesheet" href="{{asset('css/estilos-venta.css')}}">
     <link rel="stylesheet" href="{{asset('css/estilos-formularios.css')}}">
-
-       <!-- Scripts -->
-       @vite(['resources/css/app.css', 'resources/js/app.js']) 
+        <!-- Scripts -->
+     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
 <body>
@@ -61,6 +61,22 @@
 
         </div>
     </div>
+    <!-- Venta -->
+
+    <div class="element-slidebar">
+        <div class="element-slidebar-btn">
+         <span><img src="{{asset('img/compras.png')}}" alt="Ventas"></span>
+         <p>Venta</p>
+        </div>
+        <div class="element-slidebar-content">
+   
+        <a href="{{ route('venta.index') }}">Todos</a>
+        <a href="{{ route('venta.create')}}">Nueva Venta</a>
+    
+ 
+
+    </div>
+
 
     <!-- Productos -->
     
@@ -73,12 +89,11 @@
         <div class="element-slidebar-content">
    
         <a href="{{ route('producto.create') }}">Agregar Producto</a>
-   
-    <a href="{{ route('producto.index')}}">Todos</a>
+        <a href="{{ route('producto.index')}}">Todos</a>
     
  
 
-</div>
+    </div>
 
         </div>
     </div>
@@ -138,6 +153,7 @@
     @yield('contenido')
 
    </main>
+   <script src="{{asset('js/ventas.js')}}"></script>
     <script src="{{asset('js/script.js')}}"></script>
 </body>
 </html>

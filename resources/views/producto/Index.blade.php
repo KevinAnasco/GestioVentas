@@ -66,5 +66,11 @@
           
        </tbody>
    </table>
+   
+    <!-- Paginar los resultados -->
+    <div class="nav-botones">
+    <!-- elegir una platilla de paginacion de vendor/pagination -->
+      {{ $productos->links('vendor.pagination.default') }} 
+    </div>
 </section>
 @endsection
