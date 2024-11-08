@@ -1,65 +1,122 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Controllers\Controller; 
 
 use App\Models\Cliente;
 use Illuminate\Http\Request;
 
+
+
 class ClienteController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Constructor para aplicar middleware de permisos.
+     */
+    public function __construct()
+    {
+       // $this->middleware('can:cliente.create')->only(['create', 'store']);
+        //$this->middleware('can:cliente.edit')->only(['edit', 'update']);
+        //$this->middleware('can:cliente.delete')->only(['destroy']);
+    }
+
+    /**
+     * Muestra una lista de clientes.
      */
     public function index()
     {
-        //
+        $clientes = Cliente::orderBy('id', 'ASC')->paginate(10);
+        return view('cliente.index', compact('clientes'));
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Muestra el formulario para crear un nuevo cliente.
      */
     public function create()
     {
-        //
+        return view('cliente.create');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Almacena un cliente recién creado en la base de datos.
      */
     public function store(Request $request)
     {
-        //
+        // Validar los datos del formulario
+        $validatedData = $request->validate([
+            'nombre' => 'required|max:255',
+            'correo' => 'required|email|unique:clientes,correo',
+            'telefono' => 'nullable|max:20',
+            'direccion' => 'nullable|max:255',
+        ]);
+
+        // Crear una nueva instancia de Cliente y asignar los valores
+        $cliente = new Cliente();
+        $cliente->nombre = $validatedData['nombre'];
+        $cliente->correo = $validatedData['correo'];
+        $cliente->telefono = $validatedData['telefono'];
+        $cliente->direccion = $validatedData['direccion'];
+
+        // Guardar el cliente en la base de datos
+        $cliente->save();
+
+        // Redirigir a la lista de clientes con un mensaje de éxito
+        return redirect()->route('cliente.index')->with('success', 'Cliente creado exitosamente');
     }
 
     /**
-     * Display the specified resource.
+     * Muestra un cliente específico.
      */
-    public function show(Cliente $cliente)
+    public function show($id)
     {
-        //
+        $cliente = Cliente::findOrFail($id);
+        return view('cliente.show', compact('cliente'));
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Muestra el formulario para editar un cliente existente.
      */
-    public function edit(Cliente $cliente)
+    public function edit($id)
     {
-        //
+        $cliente = Cliente::findOrFail($id);
+        return view('cliente.edit', compact('cliente'));
     }
 
     /**
-     * Update the specified resource in storage.
+     * Actualiza un cliente existente en la base de datos.
      */
-    public function update(Request $request, Cliente $cliente)
+    public function update(Request $request, $id)
     {
-        //
+        // Validar los datos del formulario
+        $validatedData = $request->validate([
+            'nombre' => 'required|max:255',
+            'correo' => 'required|email|unique:clientes,correo,' . $id,
+            'telefono' => 'nullable|max:20',
+            'direccion' => 'nullable|max:255',
+        ]);
+
+        // Buscar el cliente y actualizar sus datos
+        $cliente = Cliente::findOrFail($id);
+        $cliente->nombre = $validatedData['nombre'];
+        $cliente->correo = $validatedData['correo'];
+        $cliente->telefono = $validatedData['telefono'];
+        $cliente->direccion = $validatedData['direccion'];
+
+        // Guardar los cambios
+        $cliente->save();
+
+        // Redirigir a la lista de clientes con un mensaje de éxito
+        return redirect()->route('cliente.index')->with('success', 'Cliente actualizado exitosamente');
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Elimina un cliente de la base de datos.
      */
-    public function destroy(Cliente $cliente)
+    public function destroy($id)
     {
-        //
+        $cliente = Cliente::findOrFail($id);
+        $cliente->delete();
+
+        return redirect()->route('cliente.index')->with('success', 'Cliente eliminado exitosamente');
     }
 }

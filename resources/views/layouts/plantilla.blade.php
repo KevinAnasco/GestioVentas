@@ -43,6 +43,23 @@
         </div>
     </div>
 
+     <!-- Venta -->
+
+     <div class="element-slidebar">
+        <div class="element-slidebar-btn">
+         <span><img src="{{asset('img/compras.png')}}" alt="Ventas"></span>
+         <p>Venta</p>
+        </div>
+        <div class="element-slidebar-content">
+   
+        <a href="{{ route('venta.index') }}">Todos</a>
+        <a href="{{ route('venta.create')}}">Nueva Venta</a>
+    
+ 
+
+    </div>
+
+
 
      <!-- Categorias -->
      <div class="element-slidebar">
@@ -61,22 +78,7 @@
 
         </div>
     </div>
-    <!-- Venta -->
-
-    <div class="element-slidebar">
-        <div class="element-slidebar-btn">
-         <span><img src="{{asset('img/compras.png')}}" alt="Ventas"></span>
-         <p>Venta</p>
-        </div>
-        <div class="element-slidebar-content">
    
-        <a href="{{ route('venta.index') }}">Todos</a>
-        <a href="{{ route('venta.create')}}">Nueva Venta</a>
-    
- 
-
-    </div>
-
 
     <!-- Productos -->
     
@@ -109,19 +111,18 @@
             <a href="">Gestionar Porveedores</a>
 
         </div>
-        <!-- Clientes -->
-        <div class="element-slidebar">
-            <div class="element-slidebar-btn">
-             <span><img src="{{asset('img/base-de-datos.png')}}" alt="Clientes"></span>
-             <p>Clientes</p>
-            </div>
-            <div class="element-slidebar-content">
-                <a href="">Nuevo Cliente</a>
-                <a href="">Gestionar Clientes</a>
-    
-            </div>
-        </div>
-
+        
+       <!-- Clientes -->
+<div class="element-slidebar">
+    <div class="element-slidebar-btn">
+        <span><img src="{{ asset('img/base-de-datos.png') }}" alt="Clientes"></span>
+        <p>Clientes</p>
+    </div>
+    <div class="element-slidebar-content">
+        <a href="{{ route('cliente.create') }}">Nuevo cliente</a>
+        <a href="">Gestionar Clientes</a>
+    </div>
+</div>
          <!-- Inventario -->
          <div class="element-slidebar">
             <div class="element-slidebar-btn">
