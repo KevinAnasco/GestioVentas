@@ -4,7 +4,7 @@
 <div class= "container-formulario">
 <div class="card formulario">
     <h2>Crear Nueva Categoría</h2>
-    <form action="{{route('categoria.update',$categoria->id)}}" method="POST">
+    <form action="{{route('cliente.update',$cliente->id)}}" method="POST">
         {{-- agregar directica para qu se genere un token --}}
         @csrf
 
@@ -12,20 +12,30 @@
         @method('PATCH')
         <!-- Campo Nombre -->
         <div class="form-group">
-            <label for="nombre">Nombre de la Categoría</label>
-            <input type="text" id="nombre" name="nombre" required value={{$categoria->nombre}}>
+            <label for="nombre">Nombre del cliente</label>
+            <input type="text" id="nombre" name="nombre" required value={{$cliente->nombre}}>
         </div>
-        <!-- Campo Descripción -->
+        <!-- Campo correo -->
         <div class="form-group">
-            <label for="descripcion">Descripción</label>
-            <textarea id="descripcion" name="descripcion" rows="4"
-           >{{$categoria->descripcion}}</textarea>
+            <label for="telefono">Telefono</label>
+            <input type="text" id="telefono" name="telefono" required value={{$cliente->telefono}}>
+        </div>
+        <!-- Campo telefono -->
+        <div class="form-group">
+            <label for="correo">Correo</label>
+            <input type="text" id="correo" name="correo" required value={{$cliente->correo}}>
+        </div>
+        <!-- Campo direccion -->
+        <div class="form-group">
+            <label for="direccion">Direccion</label>
+            <textarea id="direccion" name="direccion" rows="4"
+           >{{$cliente->direccion}}</textarea>
         </div>
         <!-- Campo Status -->
         
         <!-- Botón Guardar -->
         <div class="form-group">
-            <button type="submit">Actualizar Categoría</button>
+            <button type="submit">Actualizar Datos</button>
         </div>
     </form>
 </div>

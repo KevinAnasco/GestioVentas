@@ -7,7 +7,9 @@
         <div class="cabecera">
             <div class="cabecera-text">
                 <h2>{{$cliente->nombre}}</h2>
-                <p> {{$cliente->descripcion}}</p>
+                <p> {{$cliente->telefono}}</p>
+                <p> {{$cliente->direccion}}</p>
+                <p> {{$cliente->correo}}</p>
             </div>  
     
         </div>

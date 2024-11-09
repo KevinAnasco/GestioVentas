@@ -22,7 +22,11 @@
    <aside class="slidebar" id="slidebar">
     <div class="logo">
         <img src="{{asset('img/LogoA.png')}}" alt="Logo Sigie">
+        <a href="{{ route('dashboard') }}" style="text-decoration: none; color: inherit;">
+           
         <span>GestioVentas</span>  
+
+        </a>
     </div>
     
     <!-- PERFIL -->
