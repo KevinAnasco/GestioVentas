@@ -120,7 +120,7 @@
     </div>
     <div class="element-slidebar-content">
         <a href="{{ route('cliente.create') }}">Nuevo cliente</a>
-        <a href="">Gestionar Clientes</a>
+        <a href="{{ route('cliente.index')}}">Gestionar Clientes</a>
     </div>
 </div>
          <!-- Inventario -->
