@@ -6,7 +6,7 @@
       <!-- productos -->
        <div class="card">
           <div class="cabecera">
-              <img src="img/rokrt.png" alt="">
+              <img src="{{asset('img/agregar-producto.png')}}" alt="">
               <div class="cabecera-text">
                   <p>Total</p>
                   <h2>{{$totalProductos}}</h2>
@@ -22,7 +22,7 @@
         <!-- provedores -->
        <div class="card">
           <div class="cabecera">
-              <img src="{{asset('img/provedores.png')}}" alt="">
+              <img src="{{ asset('img/cadena-de-suministro.png') }}" alt="">
               <div class="cabecera-text">
                   <p>Total</p>
                   <h2>30</h2>
@@ -34,7 +34,7 @@
         <!-- Categoria -->
         <div class="card">
          <div class="cabecera">
-             <img src="{{asset('img/icono1.png')}}" alt="gkfg">
+             <img src="{{asset('img/clasificacion.png')}}" alt="gkfg">
              <div class="cabecera-text">
                  <p>Total</p>
                  <h2>{{$totalCategorias}}</h2>
@@ -51,7 +51,7 @@
          
        <div class="card">
          <div class="cabecera">
-             <img src="{{asset('img/cliente.png')}}" alt="">
+             <img src="{{ asset('img/base-de-datos.png') }}" alt="">
              
              <div class="cabecera-text">
                  <p>Total</p>
@@ -66,7 +66,7 @@
          
          <div class="card">
           <div class="cabecera">
-              <img src="{{asset('img/ventas.png')}}" alt="">
+              <img src="{{asset('img/compras.png')}}" alt="">
               <div class="cabecera-text">
                   <p>Total</p>
                   <h2>{{$totalVentas}}</h2>
@@ -78,7 +78,7 @@
       <!-- compras -->
       <div class="card">
           <div class="cabecera">
-              <img src="img/compras.png" alt="">
+              <img src="{{asset('img/bolsa-de-la-compra.png')}}" alt="">
               <div class="cabecera-text">
                   <p>Total</p>
                   <h2>30</h2>

@@ -8,3 +8,5 @@ document.getElementById('menu-toggle').addEventListener('click',function(){
     let slidebar =document.getElementById('slidebar')
     slidebar.classList.toggle('hidden')
 })
+
+

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{asset('css/estilos-tablas.css')}}">
     <link rel="stylesheet" href="{{asset('css/estilos-venta.css')}}">
     <link rel="stylesheet" href="{{asset('css/estilos-formularios.css')}}">
+    <link rel="stylesheet" href="{{asset('css/estilos-factura.css')}}">
         <!-- Scripts -->
      @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -48,98 +49,81 @@
     </div>
 
      <!-- Venta -->
-
      <div class="element-slidebar">
-        <div class="element-slidebar-btn">
-         <span><img src="{{asset('img/compras.png')}}" alt="Ventas"></span>
-         <p>Venta</p>
-        </div>
-        <div class="element-slidebar-content">
-   
-        <a href="{{ route('venta.index') }}">Todos</a>
-        <a href="{{ route('venta.create')}}">Nueva Venta</a>
-    
- 
-
+    <div class="element-slidebar-btn">
+        <span><img src="{{asset('img/compras.png')}}" alt="Ventas"></span>
+        <p>Gestión de Ventas</p>
     </div>
-
+    <div class="element-slidebar-content">
+        <a href="{{ route('venta.index') }}">Historial de Ventas</a>
+        <a href="{{ route('venta.create')}}">Registrar Nueva Venta</a>
+    </div>
+</div>
 
 
      <!-- Categorias -->
      <div class="element-slidebar">
-        <div class="element-slidebar-btn">
-         <span><img src="{{asset('img/clasificacion.png')}}" alt="Categoria"></span>
-         <p>Categorias</p>
-        </div>
-        <div class="element-slidebar-content">
-
-        <a href="{{route('categoria.index')}}">Gestionar Categoria</a>
-            @can('categoria.create')
-            <a href="{{route('categoria.create')}}">Nueva Categoria</a>
-            @endcan
-
-            
-
-        </div>
+    <div class="element-slidebar-btn">
+        <span><img src="{{asset('img/clasificacion.png')}}" alt="Categoria"></span>
+        <p>Categorías</p>
     </div>
+    <div class="element-slidebar-content">
+        <a href="{{route('categoria.index')}}">Administrar Categorías</a>
+        @can('categoria.create')
+        <a href="{{route('categoria.create')}}">Registrar Nueva Categoría</a>
+        @endcan
+    </div>
+</div>
    
 
     <!-- Productos -->
     
     <div class="element-slidebar">
-        <div class="element-slidebar-btn">
-         <span><img src="{{asset('img/agregar-producto.png')}}" alt="Product"></span>
-         <p>Productos</p>
-        </div>
-        <div class="element-slidebar-content">
-        <div class="element-slidebar-content">
-   
-        <a href="{{ route('producto.create') }}">Agregar Producto</a>
-        <a href="{{ route('producto.index')}}">Todos</a>
-    
- 
-
+    <div class="element-slidebar-btn">
+        <span><img src="{{asset('img/agregar-producto.png')}}" alt="Product"></span>
+        <p>Productos</p>
     </div>
-
-        </div>
+    <div class="element-slidebar-content">
+        <a href="{{ route('producto.create') }}">Registrar Nuevo Producto</a>
+        <a href="{{ route('producto.index')}}">Administrar Inventario</a>
     </div>
-   
+</div>
+
     <!-- Proveedores -->
     <div class="element-slidebar">
-        <div class="element-slidebar-btn">
-         <span><img src="{{asset('img/cadena-de-suministro.png')}}" alt="Proveedor"></span>
-         <p>Proveedores</p>
-        </div>
-        <div class="element-slidebar-content">
-            <a href="">Nuevo Proveedor</a>
-            <a href="">Gestionar Porveedores</a>
-
-        </div>
+    <div class="element-slidebar-btn">
+        <span><img src="{{ asset('img/cadena-de-suministro.png') }}" alt="Proveedor"></span>
+        <p>Proveedores</p>
+    </div>
+    <div class="element-slidebar-content">
+        <a href="{{ route('proveedor.create')}}">Registrar Nuevo Proveedor</a>
+        <a href="{{ route('proveedor.index')}}">Administrar Proveedores</a>
+    </div>
+</div>
         
        <!-- Clientes -->
-<div class="element-slidebar">
+       <div class="element-slidebar">
     <div class="element-slidebar-btn">
         <span><img src="{{ asset('img/base-de-datos.png') }}" alt="Clientes"></span>
         <p>Clientes</p>
     </div>
     <div class="element-slidebar-content">
-        <a href="{{ route('cliente.create') }}">Nuevo cliente</a>
-        <a href="{{ route('cliente.index')}}">Gestionar Clientes</a>
+        <a href="{{ route('cliente.create') }}">Registrar Nuevo Cliente</a>
+        <a href="{{ route('cliente.index')}}">Administrar Clientes</a>
     </div>
 </div>
+
          <!-- Inventario -->
          <div class="element-slidebar">
-            <div class="element-slidebar-btn">
-             <span><img src="{{asset('img/inventario.png')}}" alt="Inventario"></span>
-             <p>Inventario</p>
-            </div>
-            <div class="element-slidebar-content">
-                <a href="">Generar Informe</a>  
-    
-            </div>
-        </div>
-
+    <div class="element-slidebar-btn">
+        <span><img src="{{asset('img/inventario.png')}}" alt="Inventario"></span>
+        <p>Inventario</p>
     </div>
+    <div class="element-slidebar-content">
+        <a href="{{ route('pdf.productos') }}">Generar Informe de Inventario</a>
+    </div>
+</div>
+
    </aside>
 
    <!-- main -->

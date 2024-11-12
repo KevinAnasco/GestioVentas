@@ -1,0 +1,71 @@
+/* Estilos generales para la factura */
+.factura-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.titulo-factura {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.factura-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.info-seccion {
+    width: 48%;
+}
+
+.info-seccion p {
+    margin: 5px 0;
+}
+
+.tabla-detalles {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.tabla-detalles th, .tabla-detalles td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabla-detalles th {
+    background-color: #f4f4f4;
+}
+
+.factura-totales {
+    margin-top: 20px;
+}
+
+.factura-totales p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.factura-totales strong {
+    font-weight: bold;
+}
+
+.pago-info {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 2px dashed #ddd;
+}
+
+.pago-info p {
+    font-size: 16px;
+    margin: 5px 0;
+}

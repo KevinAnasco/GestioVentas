@@ -3,7 +3,7 @@
 @section('contenido')
 <div class= "container-formulario">
 <div class="card formulario">
-    <h2>Crear Nueva Categoría</h2>
+    <h2>Ingresar Nuevo Cliente</h2>
     <form action="{{route('cliente.update',$cliente->id)}}" method="POST">
         {{-- agregar directica para qu se genere un token --}}
         @csrf
@@ -40,4 +40,4 @@
     </form>
 </div>
 </div>
-@endsection
+
