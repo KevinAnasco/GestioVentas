@@ -19,7 +19,7 @@ class VentaController extends Controller
     {
         //
 
-        $ventas=Venta::orderBy('id','ASC')->paginate(10);
+        $ventas=Venta::orderBy('id','DESC')->paginate(10);
         return view('venta.index',compact('ventas'));
     }
 

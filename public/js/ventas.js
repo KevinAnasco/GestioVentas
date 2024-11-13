@@ -33,7 +33,7 @@ function updateTotals() {
         const cantidad = detalle.querySelector('input[name^="detalles"][name$="[cantidad]"]').value;
          console.log (cantidad);
         const precioUnitario = detalle.querySelector('input[name^="detalles"][name$="[precio_venta]"]').value;
-        const subtotal = cantidad * precioUnitario;
+       const subtotal = cantidad * precioUnitario;
        
         detalle.querySelector('.venta-subtotal').textContent = subtotal.toFixed(2);
         console.log  ("subtotal" +subtotal);

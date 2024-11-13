@@ -36,16 +36,12 @@
                     
                  </a>
                  @can('cliente.destroy')
-                 <form action="{{route('cliente.destroy',[$cliente->id])}}" method="POST" onsubmit="return confimarEliminacion()">
-
-                    {{-- permite gemrar el token para enviar por post --}}
-                    @csrf
-                    {{-- agregar metodo delete --}}
-                    @method('DELETE')
-                    <input type="image"src="{{asset('img/delete.png')}}"></input>
-
-                 </form>
-                 @endcan
+<form action="{{ route('cliente.destroy', [$cliente->id]) }}" method="POST" onsubmit="return confimarEliminacion()">
+    @csrf
+    @method('DELETE')
+    <input type="image" src="{{ asset('img/delete.png') }}">
+</form>
+@endcan
                  <script>
                     function confimarEliminacion() {
                         return confirm('¿Seguro deseas eliminar?'); // Muestra el mensaje de confirmación

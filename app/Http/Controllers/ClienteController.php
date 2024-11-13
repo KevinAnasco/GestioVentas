@@ -8,18 +8,18 @@ use Illuminate\Http\Request;
 
 
 
-class ClienteController extends Controller
-{
+
+class ClienteController extends Controller{
     /**
      * Constructor para aplicar middleware de permisos.
      */
     public function __construct()
     {
+        // Aplicar permisos a las acciones de crear, editar y eliminar
        // $this->middleware('can:cliente.create')->only(['create', 'store']);
-        //$this->middleware('can:cliente.edit')->only(['edit', 'update']);
-        //$this->middleware('can:cliente.delete')->only(['destroy']);
+       // $this->middleware('can:cliente.edit')->only(['edit', 'update']);
+      //  $this->middleware('can:cliente.destroy')->only(['destroy']);
     }
-
     /**
      * Muestra una lista de clientes.
      */
@@ -117,6 +117,6 @@ class ClienteController extends Controller
         $cliente = Cliente::findOrFail($id);
         $cliente->delete();
 
-        return redirect()->route('cliente.index')->with('success', 'Cliente eliminado exitosamente');
+        return redirect()->route('cliente.index');
     }
 }

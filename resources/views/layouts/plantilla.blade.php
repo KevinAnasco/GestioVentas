@@ -130,7 +130,7 @@
    <main class="main">
     <!-- header -->
     <header class="header">
-        <h2>Ventas</h2>
+        
         <button id="menu-toggle" class="menu-hamburger">☰</button>
     </header>
     

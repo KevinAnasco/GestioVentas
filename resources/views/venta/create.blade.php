@@ -64,6 +64,7 @@
                 <input type="number" id="total" name="total" class="total-form-control" value="0" min="0" step="5" readonly>
             </div>
         </div>
+        
 
         <!-- Tabla de Detalles -->
         <div id="detalles">
