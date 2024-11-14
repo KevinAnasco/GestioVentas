@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{asset('css/estilos-venta.css')}}">
     <link rel="stylesheet" href="{{asset('css/estilos-formularios.css')}}">
     <link rel="stylesheet" href="{{asset('css/estilos-factura.css')}}">
+   
         <!-- Scripts -->
      @vite(['resources/css/app.css', 'resources/js/app.js'])
 

@@ -1,4 +1,5 @@
 <?php
+
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\VentaController;
@@ -8,15 +9,13 @@ use App\Http\Controllers\PdfController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\ClienteController; 
 use App\Http\Controllers\ProveedorController;
-
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
+// Ruta principal
 Route::get('/', [WelcomeController::class, 'welcome']);
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/jaja', [DashboardController::class, 'jaja'])->middleware(['auth', 'verified']);
-
+// Rutas protegidas por autenticación
 Route::middleware('auth')->group(function () {
     // Rutas de recursos
     Route::resource('/categoria', CategoriaController::class);
@@ -25,10 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/cliente', ClienteController::class);
     Route::resource('/proveedor', ProveedorController::class);
 
-   
-
-
-    // Rutas de perfil
+    // Ruta de perfil
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -36,7 +32,13 @@ Route::middleware('auth')->group(function () {
     // Ruta PDF
     Route::get('/pdfProductos', [PdfController::class, 'pdfProductos'])->name('pdf.productos');
 
-   
+    // Ruta de Dashboard
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/jaja', [DashboardController::class, 'jaja']);
 });
 
+// Rutas de autenticación (login, registro, etc.)
+Auth::routes(); // Solo aquí, no dentro del grupo 'auth'
+
+// Requiere las rutas de autenticación del archivo 'auth.php'
 require __DIR__.'/auth.php';
