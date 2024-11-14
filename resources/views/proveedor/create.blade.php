@@ -31,6 +31,12 @@
                     <input type="text" id="direccion" name="direccion">
                 </div>
 
+                <!-- Campo Descripción -->
+                <div class="form-group">
+                    <label for="descripcion">Descripción del proveedor</label>
+                    <textarea id="descripcion" name="descripcion"></textarea> <!-- Campo de descripción, opcional -->
+                </div>
+
                 <!-- Botón Guardar -->
                 <div class="form-group">
                     <button type="submit">Guardar Proveedor</button>

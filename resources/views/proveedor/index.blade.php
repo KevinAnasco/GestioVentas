@@ -3,8 +3,8 @@
 @section('contenido')
     
 <section class="container-tabla">
-    <h2 class="titulo-tabla"> Proveedores</h2>
-    <table >
+    <h2 class="titulo-tabla">Proveedores</h2>
+    <table>
         <thead>
             <tr>
                 <th>ID</th>
@@ -12,18 +12,22 @@
                 <th>Correo</th>
                 <th>Teléfono</th>
                 <th>Dirección</th>
+                <th>Descripción</th> <!-- Nueva columna de descripción -->
                 <th>Opciones</th>
             </tr>
         </thead>
         <tbody class="tabla-proveedores">
             @foreach ($proveedors as $proveedor)
-            <tr>                
+            <tr>
                 <td>{{ $proveedor->id }}</td>
                 <td>{{ $proveedor->nombre }}</td>
                 <td>{{ $proveedor->email }}</td>
                 <td>{{ $proveedor->telefono }}</td>
                 <td>{{ $proveedor->direccion ?? 'Sin dirección' }}</td>
                 
+                <!-- Mostrar la descripción, si existe, de lo contrario mostrar 'Sin descripción' -->
+                <td>{{ $proveedor->descripcion ?? 'Sin descripción' }}</td> 
+
                 <td>
                     <!-- Ver proveedor -->
                     <a href="{{ route('proveedor.show', [$proveedor->id]) }}">

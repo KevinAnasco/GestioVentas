@@ -35,6 +35,12 @@
                 <textarea id="direccion" name="direccion" rows="4">{{ $proveedor->direccion }}</textarea>
             </div>
 
+            <!-- Campo Descripción -->
+            <div class="form-group">
+                <label for="descripcion">Descripción del proveedor</label>
+                <textarea id="descripcion" name="descripcion" rows="4">{{ $proveedor->descripcion }}</textarea> <!-- Campo de descripción, opcional -->
+            </div>
+
             <!-- Botón Actualizar -->
             <div class="form-group">
                 <button type="submit">Actualizar Datos</button>
@@ -43,4 +49,3 @@
     </div>
 </div>
 @endsection
-

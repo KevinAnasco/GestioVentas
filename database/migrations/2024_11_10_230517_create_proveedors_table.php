@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ventas', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('cliente_id')->constrained('clientes')->onDelete('cascade');
-            $table->foreignId('vendedor_id')->constrained('users')->onDelete('cascade');
-            $table->decimal('total', 10, 2);
-            $table->decimal('descuento', 10, 2)->default(0);
-            $table->string('estado')->default('pendiente');
-            $table->timestamps();
+        Schema::create('proveedors', function (Blueprint $table) {
+            $table->id();  // ID único para cada proveedor
+            $table->string('nombre');  // Nombre del proveedor
+            $table->string('email')->unique();  // Correo único del proveedor
+            $table->string('telefono')->nullable();  // Teléfono, puede ser nulo
+            $table->string('direccion')->nullable();  // Dirección, puede ser nula
+            $table->text('descripcion')->nullable();  // Descripción del proveedor
+            $table->timestamps();  // Campos de fechas (created_at, updated_at)
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ventas');
+        Schema::dropIfExists('proveedors');  // Eliminar la tabla de proveedores si existe
     }
 };
